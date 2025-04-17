@@ -17,8 +17,8 @@ function Home() {
     fetch("https://podcast-api.netlify.app")
       .then((response) => response.json())
       .then((data) => {
-        // Assuming the API returns an array of podcasts, take only the first two for this example
-        setPodcasts(data.slice(0, 2)); // Adjust as needed
+        //  take only the first two for this example
+        setPodcasts(data.slice(0, 2));
       })
       .catch((error) => console.error("Error fetching podcasts:", error));
   }, []);

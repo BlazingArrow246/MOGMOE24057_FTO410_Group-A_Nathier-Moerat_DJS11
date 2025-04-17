@@ -8,18 +8,29 @@ function PodcastList() {
   const [selectedGenre, setSelectedGenre] = useState("");
 
   useEffect(() => {
-    fetch("https://podcast-api.netlify.app")
-      .then((response) => response.json())
+    fetch(`https://podcast-api.netlify.app`)
+      .then((response) =>
+      {if (!response.ok){
+        throw new Error (`HTTP error! status: ${response.status}`);
+      }
+        return response.json();
+    })
       .then((data) => setPodcasts(data))
       .catch((error) => console.error("Error fetching podcasts:", error));
   }, []);
 
    // Fetch all genres
    useEffect(() => {
-    fetch("https://podcast-api.netlify.app")
-      .then((response) => response.json())
-      .then((data) => setGenres(data.genres || [])) // Adjust according to actual data structure
-      .catch((error) => console.error("Error fetching genres:", error));
+    fetch("https://podcast-api.netlify.app/genres")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => setGenres(data))
+    .catch((error) => console.error("Error fetching genres:", error));
+  
   }, []);
 
   // Handle genre selection
@@ -29,7 +40,7 @@ function PodcastList() {
 
   // Filter podcasts based on selected genre
   const filteredPodcasts = selectedGenre
-    ? podcasts.filter((podcast) => podcast.genre.name === selectedGenre)
+    ? podcasts.filter((podcast) => podcast.genre === parseInt(selectedGenre))
     : podcasts;
 
   return (
@@ -42,7 +53,7 @@ function PodcastList() {
       <select id="genre" value={selectedGenre} onChange={handleGenreChange}>
         <option value="">All Genres</option>
         {genres.map((genre) => (
-          <option key={genre.id} value={genre.name}>
+          <option key={genre.id} value={genre.id}>
             {genre.name}
           </option>
         ))}
