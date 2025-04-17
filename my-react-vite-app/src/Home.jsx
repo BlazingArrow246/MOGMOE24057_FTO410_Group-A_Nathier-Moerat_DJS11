@@ -1,6 +1,14 @@
 import React from "react";
 
 function Home() {
+  //Styles empty to test app
+  const headerStyles = {};
+const navStyles = {};
+const mainStyles = {};
+const podcastCardStyles = {};
+const buttonStyles = {};
+const footerStyles = {};
+
   return (
     <div>
       {/* Header Section */}
