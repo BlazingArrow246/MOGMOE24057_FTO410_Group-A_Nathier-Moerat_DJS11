@@ -5,7 +5,7 @@ import Home from './Home';
 import PodcastList from './Podcasts/Podcasts';
 import SeasonList from './Podcasts/Seasons';
 import EpisodeList from './Podcasts/Episodes';
-import EpisodeDetail from './Podcasts/EpisodeDetails';
+import EpisodeDetail from './Podcasts/EpisodeDetail';
 
 
 function App() {
