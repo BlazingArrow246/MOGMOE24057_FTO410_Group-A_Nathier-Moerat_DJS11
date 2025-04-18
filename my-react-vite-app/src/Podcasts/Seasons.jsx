@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
 
+
 function SeasonList() {
   // Extract the podcast ID from the URL parameters
   const { podcastId } = useParams(); 
@@ -23,11 +24,12 @@ function SeasonList() {
   }, [podcastId]);
 
   return (
-    <div>
+    <div className = "container">
 
       <h1>Seasons for {podcastTitle|| "Loading..."}</h1>
+      <div className = "content">
       {seasons.map((season) => (
-        <div key={season.id}>
+        <div key={season.id} clasName="card">
           <h2>{season.seasonNumber}</h2>
           <p>{season.episodes} Episodes</p>
           <Link to={`/podcasts/${podcastId}/seasons/${season.id}`}
@@ -36,6 +38,7 @@ function SeasonList() {
 
         </div>
       ))}
+    </div>
     </div>
   );
 }

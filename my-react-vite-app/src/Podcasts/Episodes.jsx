@@ -4,24 +4,24 @@ import { Link, useParams } from "react-router-dom";
 function EpisodeList() {
   const { podcastId, seasonId } = useParams(); // Get IDs from URL
   const [podcastTitle, setPodcastTitle] = useState('')
+  const [episodes, setEpisodes] = useState([]); // State for episodes
 
   useEffect(() => {
-    // Fetch podcast details dynamically using the podcastId
-    fetch(`https://podcast-api.netlify.app/id/${podcastId}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => setPodcastTitle(data.title)) // Assume API response contains "title"
-      .catch((error) => console.error("Error fetching podcast title:", error));
-  }, [podcastId]);
-
-  const episodes = [
-    { id: 1, title: "Episode 1", description: "Introduction to the season" },
-    { id: 2, title: "Episode 2", description: "The journey continues" },
-  ];
+     // Fetch podcast details dynamically using the podcastId
+     fetch(`https://podcast-api.netlify.app/id/${podcastId}`)
+     .then((response) => {
+       if (!response.ok) {
+         throw new Error(`HTTP error! Status: ${response.status}`);
+       }
+       return response.json();
+     })
+     .then((data) => {
+       setPodcastTitle(data.title); // 
+       const season = data.seasons.find((s) => s.id === parseInt(seasonId)); // Find the correct season
+       setEpisodes(season ? season.episodes : []); // Set episodes for the season
+     })
+     .catch((error) => console.error("Error fetching podcast details:", error));
+ }, [podcastId, seasonId]);
 
   return (
     
@@ -30,14 +30,17 @@ function EpisodeList() {
         <br/> 
         Season {seasonId}
         </h1>
-
-      {episodes.map((episode) => (
+      {episodes.lngth > 0 ? (
+      episodes.map((episode) => (
         <div key={episode.id}>
           <h3>{episode.title}</h3>
           <p>{episode.description}</p>
           <Link to={`/podcasts/${podcastId}/seasons/${seasonId}/episodes/${episode.id}`}>Play</Link>
         </div>
-      ))}
+      ))
+    ) : (
+      <p>No episodes available</p>
+    )}
     </div>
   );
 }
