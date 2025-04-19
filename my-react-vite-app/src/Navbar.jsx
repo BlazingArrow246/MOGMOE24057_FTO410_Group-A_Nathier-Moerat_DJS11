@@ -1,13 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 
 function Navbar() {
   return (
     <nav>
       <Link to="/">Home</Link>
       <Link to="/podcasts">Podcasts</Link>
-      <Link to="/about">About</Link>
-      <Link to="/contact">Contact</Link>
+      <Link to="/About">About</Link>
+      <Link to="/Favorites">View Favorites</Link>
     </nav>
   );
 }

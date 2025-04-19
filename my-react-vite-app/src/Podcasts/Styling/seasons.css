@@ -1,0 +1,89 @@
+/* seasons.css */
+.seasons-container {
+  background-color: #181818;
+  color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container h1 {
+  color: #f0f0f0;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.seasons-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.card {
+  background-color: #222;
+  color: #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  box-sizing: border-box;
+  width: calc(33% - 10px);
+  min-width: 200px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  color: #aaa;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.card a {
+  background-color: #007bff;
+  color: #f0f0f0;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.card a:hover {
+  background-color: #0056b3;
+}
+
+.loading {
+  color: #aaa;
+  font-size: 1.2rem;
+}
+
+.error {
+  color: #ff6b6b;
+  font-size: 1.2rem;
+}
+
+.no-seasons {
+  color: #aaa;
+  font-size: 1rem;
+}

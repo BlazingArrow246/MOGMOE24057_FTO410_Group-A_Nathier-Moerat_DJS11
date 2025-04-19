@@ -1,0 +1,98 @@
+.favorites-container {
+  padding: 20px;
+  background-color: #1e1e1e; /* Dark background /
+  color: #d4d4d4; / Light text */
+  }
+  
+  .favorites-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #f0f0f0; /* Lighter title text */
+  }
+  
+  .favorites-list {
+  list-style: none;
+  padding: 0;
+  }
+  
+  .favorite-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #333; /* Darker separator */
+  padding-bottom: 10px;
+  }
+  
+  .podcast-link {
+  text-decoration: none;
+  color: #d4d4d4; /* Light link text */
+  flex-grow: 1;
+  }
+  
+  .podcast-link:hover {
+  color: #fff; /* Slightly brighter on hover */
+  }
+  
+  .podcast-image {
+  width: 80px;
+  height: auto;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: 1px solid #333; /* Subtle border for image */
+  }
+  
+  .unfavorite-button {
+  background-color: #f44336; /* Keep red for unfavorite */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  }
+  
+  .unfavorite-button:hover {
+  background-color: #d32f2f;
+  }
+  
+  .error {
+  color: #ff6666; /* Lighter red for error in dark theme */
+  font-weight: bold;
+  }
+  
+  .empty {
+  font-style: italic;
+  color: #a7a7a7; /* Lighter gray for empty message */
+  }
+  
+  /* Sorting Controls */
+  .sorting-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #d4d4d4;
+  }
+  
+  .sorting-controls label {
+  margin-right: 10px;
+  }
+  
+  .sorting-controls select {
+  background-color: #333;
+  color: #d4d4d4;
+  border: 1px solid #555;
+  padding: 6px 10px;
+  border-radius: 5px;
+  }
+  
+  .sorting-controls select option {
+  background-color: #333;
+  color: #d4d4d4;
+  }
+  
+  /* Favorited At Timestamp */
+  .favorited-at {
+  color: #a7a7a7;
+  font-size: 0.9em;
+  margin-top: 5px;
+  }

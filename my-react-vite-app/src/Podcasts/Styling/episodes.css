@@ -1,0 +1,93 @@
+/* EpisodeList.css */
+.episode-list-container {
+    background-color: #181818; /* Dark background */
+    color: #f0f0f0; /* Light text */
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .back-button {
+    background-color: #333;
+    color: #f0f0f0;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .back-button:hover {
+    background-color: #555;
+  }
+  
+  .podcast-title {
+    color: #f0f0f0;
+    margin-bottom: 20px;
+  }
+  
+  .episodes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .episode-card {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .episode-title {
+    color: #ddd;
+    margin-bottom: 5px;
+  }
+  
+  .episode-description {
+    color: #aaa;
+    margin-bottom: 10px;
+  }
+  
+  .play-button {
+    background-color: #007bff; /* Blue accent color */
+    color: #f0f0f0;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .play-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .no-episodes {
+    color: #aaa;
+  }
+  
+  .audio-player-container {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #222;
+    border-radius: 5px;
+  }
+  
+  .now-playing {
+    color: #ddd;
+    margin-bottom: 10px;
+  }
+  
+  .audio-player {
+    width: 100%; /* Make the audio player take full width */
+  }
+  
+  .loading {
+    color: #aaa;
+    font-size: 1.2rem;
+  }
+  
+  .error {
+    color: #ff6b6b; /* Red error color */
+    font-size: 1.2rem;
+  }
